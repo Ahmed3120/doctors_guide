@@ -19,16 +19,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::controller(view1Controller::class)->group(function () {
-    
-    
-});
 
 Route::controller(homeController::class)->group(function(){
+
     Route::get('/', 'getHome');
     Route::get('/doctorinfo', 'getDoctor');
     Route::get('/autoComplete', 'autoComplete')->name('autoComplete');
     
-
 });
 

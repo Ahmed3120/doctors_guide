@@ -1,0 +1,13 @@
+*{
+    /* margin: 0px;
+    padding: 0px; */
+    font-family:'Times New Roman', Times, serif;
+}
+
+body{
+    background-color: blue;
+}
+
+div.container{
+    background-color: blueviolet;
+}

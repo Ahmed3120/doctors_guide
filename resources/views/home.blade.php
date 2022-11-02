@@ -4,18 +4,18 @@
 <div class="row">
     <div class="col">
 
-        <div class="card w-100 text-dark p-5 bg-white">
-            <div class="card-body bg-white">
-                {{-- <form action="" method="POST" > --}}
-                    {{-- @csrf --}}
-                    <h5 class="card-title mx-10">ابحث عن الطبيب</h5>
+        <div class="card w-100">
+            <div class="card-body">
+                <form action="" method="POST" >
+                    @csrf
+                    <h5 class="card-title">ابحث عن الطبيب</h5>
                     <div class="form-floating mb-3 ui-widget">
-                        <input type="search" class="form-control rounded-pill text-center" id="floatingInput" placeholder="Search">
-                        <label for="floatingInput">ابحث</label>
+                        <input type="search" class="tpyehead form-control rounded-pill text-center" id="floatingInput" placeholder="Search">
+                        <label for="floatingInput">ابحث...</label>
                     </div>
                 
                     <a href="#" class="btn btn-primary">ابحث</a>
-                {{-- </form> --}}
+                </form>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
 
 @section('autoCompleteSearch')
 
-<script>
+{{-- <script>
     $( function() {
       var availableTags = [
         "ActionScript",
@@ -58,6 +58,17 @@
         source: availableTags
       });
     } );
+    </script> --}}
+
+    <script>
+        var path = "{{route('autoComplete')}}"
+        $('input-tpyehead').typeahead({
+            source: function(name, process){
+                return $.get(path, {name:name}, function(data){
+                    return peocess(data);
+                });
+            }
+        });
     </script>
 
 @endsection

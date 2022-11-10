@@ -12,10 +12,20 @@ class homeController extends Controller
         return(view('home'));
     }
 
-    function getDoctor(){
-        $doctors = Doctor::all();
-        return view('doctorInfoPage', compact('doctors'));
+    public function getItemByName(Request $request){
+        $name = $request->doc_name;
+
+        $doctorName = Doctor::get()->where('doctor_name', $name)->first();
+        if(!$doctorName){
+            return redirect()->back()->with('success', __('read.not found'));
+        }
+        return view('doctorInfoPage', compact('doctorName'));
     }
+
+    // function getDoctor(){
+    //     $doctors = Doctor::select(id)
+    //     return view('doctorInfoPage', compact('doctors'));
+    // }
 
     function autoComplete(Request $request){
 

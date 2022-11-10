@@ -30,9 +30,16 @@ div.container div.row div.col div.card{
 
 }
 
+div.container input#floatingInput{
+    background-color: transparent;
+    border: 2px solid black;
+    padding: 2px;
+}
+
 div.container1{
     background-color: transparent;
     padding: 5%;
+    padding-top: 0;
 }
 
 
@@ -41,5 +48,7 @@ div.container1 div.card{
     text-align: center;
 }
 
-
+header.masthead{
+    background-color: #5CB8E4;
+}
 

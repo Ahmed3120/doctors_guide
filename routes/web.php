@@ -24,7 +24,8 @@ Route::controller(homeController::class)->group(function(){
 
     Route::get('/', 'getHome');
     Route::get('/doctorinfo', 'getDoctor');
-    Route::get('/autoComplete', 'autoComplete')->name('autoComplete');
+    Route::get('/autoComplete', 'autoComplete') ->name('autoComplete');
+    Route::get('/doctorSearch', 'getItemByName')->name('docSearch');
     
 });
 

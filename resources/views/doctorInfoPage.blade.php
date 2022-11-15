@@ -7,7 +7,7 @@
             <!-- Masthead Avatar Image-->
             <img class="masthead-avatar mb-5" src="{{asset('assets/img/avataaars.svg')}}" alt="..." />
             <!-- Masthead Heading-->
-            <h2 class="masthead-heading mb-0">{{$doctorName->doctor_name}} {{$doctorName->doctor_lastname}}</h2>
+            <h2 class="masthead-heading mb-0">{{$doctorName->doctor_name}}</h2>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -27,7 +27,8 @@
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">العنوان</h4>
                     <p class="lead mb-0">
-                        {{$doctorName->doctor_address}}
+                        {{$doctorName->doctor_address1}}
+                        {{$doctorName->doctor_address2}}
                     </p>
                 </div>
                 {{-- <!-- Footer doctor phone number--> --}}

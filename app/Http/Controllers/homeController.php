@@ -15,11 +15,11 @@ class homeController extends Controller
     public function getItemByName(Request $request){
         $name = $request->doc_name;
 
-        $doctorName = Doctor::get()->where('doctor_name', $name)->first();
+        $doctorName = Doctor::get()->where('doctor_name', "like", '%'.$name.'%');
         if(!$doctorName){
             return redirect()->back()->with('success', __('read.not found'));
         }
-        return view('doctorInfoPage', compact('doctorName'));
+        return view('searchResult', compact('doctorName'));
     }
 
     // function getDoctor(){
@@ -34,6 +34,5 @@ class homeController extends Controller
                             ->get();
         
         return response()->jason($doctorName);
-
     }
 }

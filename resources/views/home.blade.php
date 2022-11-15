@@ -18,11 +18,6 @@
                             <i class="fas fa-search me-2"></i>
                             ابحث
                         </button>
-                        {{-- <input class="btn btn-xl btn-outline-dark" type="submit" value="ابحث">
-                        <a class="" href="#">
-                            <i class="fas fa-search me-2"></i>
-                            
-                        </a> --}}
                     </div>
                 </form>
             </div>
@@ -72,6 +67,23 @@
         source: availableTags
       });
     } );
+    </script> --}}
+    {{-- <script>
+        $('#floatingInput').on('keyup',function(){
+            $value=$(this).val();
+            $.ajax({
+            type : 'get',
+            url : '{{route('docSearch')}}',
+            data:{'doc_name':$value},
+            success:function(data){
+            $('tbody').html(data);
+            }
+        });
+        })
+    </script>
+
+    <script type="text/javascript">
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
     </script> --}}
 
     <script>

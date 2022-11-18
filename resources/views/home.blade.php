@@ -29,6 +29,21 @@
 
 @endsection
 
+@section('catigories')    
+
+<div class="row">
+@foreach ($specialize as $spec)
+    <div class="col-sm-4 mb-3 bg-">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{$spec->specialize}}</h5>
+          {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
+        </div>
+      </div>
+    </div>
+@endforeach
+  </div>
+@endsection
 @section('footer')
 <div class="copyright py-4 text-center text-white">
     <div class="container"><small>Copyright &copy; {{Request::server ("HTTP_HOST")}} 2022</small></div>

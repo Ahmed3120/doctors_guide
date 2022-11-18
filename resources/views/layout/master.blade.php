@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-7mQhpDl5nRA5nY9lr8F1st2NbIly/8WqhjTp+0oFxEA/QUuvlbF6M1KXezGBh3Nb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('css/styles.css') }}" rel="stylesheet" /> --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Favicon-->
@@ -34,23 +34,31 @@
       <div class="mx-auto" >
         <ul class="navbar-nav">
           <a class="navbar-brand" href="/">دليلي</a>
-      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
             <li class="nav-item active">
               <a class="nav-link" href="/">الصفحة الرئيسية </a>
             </li>
-            
+            {{-- <li class="nav-item active">
+              <input type="search" name="search" id="search" class="form-control ps-5 rounded">
+            </li> --}}
           </ul>
         </div>
       </div>
+      
     </nav>
 
     <div class="container">
       @yield('doctorSearch')
     </div>
-
+@yield('catigories')
     <div class="container1">
       @yield('docInfo')
     </div>
+
+    @yield('searchResult')
+
+  
+  
     @yield('footer')
 
 

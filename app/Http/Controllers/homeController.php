@@ -4,28 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctor;
 use Illuminate\Http\Request;
-use PhpParser\Comment\Doc;
+
 
 class homeController extends Controller
 {
     function getHome(){
-        return(view('home'));
+        $specialize = Doctor::select('specialize')->get();
+        return(view('home', compact('specialize')));
     }
 
     public function getItemByName(Request $request){
         $name = $request->doc_name;
 
-        $doctorName = Doctor::get()->where('doctor_name', "like", '%'.$name.'%');
+        $doctorName = Doctor::select('doctor_name', 'specialize', 'updated_at', 'id')
+                            ->where('doctor_name', "like", '%'.$name.'%')
+                            ->get();
+    
         if(!$doctorName){
-            return redirect()->back()->with('success', __('read.not found'));
+            return redirect()->back()->with('success', __('لم يتم ايجاد الاسم'));
         }
         return view('searchResult', compact('doctorName'));
     }
 
-    // function getDoctor(){
-    //     $doctors = Doctor::select(id)
-    //     return view('doctorInfoPage', compact('doctors'));
-    // }
+    function getDoctorById($id){
+        $doctor = Doctor::find($id);
+        if (!$doctor) {
+            return redirect()->back()->with('erorr', 'erorr');
+        }
+        return view('doctorInfoPage', compact('doctor'));
+        // return redirect(view('doctorInfoPage'))->with('doctor', compact('doctor'));
+    }
+
+  
 
     function autoComplete(Request $request){
 

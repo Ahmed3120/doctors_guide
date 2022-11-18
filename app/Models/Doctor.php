@@ -17,10 +17,11 @@ class Doctor extends Model
         'specialize',
         'doctor_phone_number',
         'note',
+        'updated_at'
 
     ];
 
     protected $hidden = [
-        'timestamps'
+        'created_at'
     ];
 }

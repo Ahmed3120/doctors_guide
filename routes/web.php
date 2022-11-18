@@ -23,9 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::controller(homeController::class)->group(function(){
 
     Route::get('/', 'getHome');
-    Route::get('/doctorinfo', 'getDoctor');
+    Route::get('/doctorinfo/{id}', 'getDoctorById')->name('doctorInfoPage');
+    Route::get('/doctori', 'getPage');
     Route::get('/autoComplete', 'autoComplete') ->name('autoComplete');
-    Route::get('/doctorSearch', 'getItemByName')->name('docSearch');
+    Route::get('/doctorSearch',  'getItemByName')->name('docSearch');
     
 });
 

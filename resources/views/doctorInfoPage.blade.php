@@ -2,12 +2,13 @@
 
 @section('docInfo')
 
+
     <header class="masthead text-white text-center p-5">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Avatar Image-->
             <img class="masthead-avatar mb-5" src="{{asset('assets/img/avataaars.svg')}}" alt="..." />
             <!-- Masthead Heading-->
-            <h2 class="masthead-heading mb-0">{{$doctorName->doctor_name}}</h2>
+            <h2 class="masthead-heading mb-0">{{$doctor->doctor_name}}</h2>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -15,7 +16,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">{{$doctorName->specialize}}</p>
+            <p class="masthead-subheading font-weight-light mb-0">{{$doctor->specialize}}</p>
         </div>
     </header>
   
@@ -27,15 +28,15 @@
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">العنوان</h4>
                     <p class="lead mb-0">
-                        {{$doctorName->doctor_address1}}
-                        {{$doctorName->doctor_address2}}
+                        {{$doctor->doctor_address1}}
+                        {{$doctor->doctor_address2}}
                     </p>
                 </div>
                 {{-- <!-- Footer doctor phone number--> --}}
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <h4 class="text-uppercase mb-4">رقم العيادة</h4>
                     <p class="lead mb-0">
-                        {{$doctorName->doctor_phone_number}}
+                        {{$doctor->doctor_phone_number}}
                         
                     </p>
                     
@@ -43,7 +44,7 @@
                 {{-- <!-- Footer note from the doctor--> --}}
                 <div class="col-lg-4">
                     <h4 class="text-uppercase mb-4">ملاحظات</h4>
-                    <p class="lead mb-0">{{$doctorName->note}}</p>
+                    <p class="lead mb-0">{{$doctor->note}}</p>
                 </div>
             </div>
         </div>

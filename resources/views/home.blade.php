@@ -1,6 +1,7 @@
 @extends('layout.master')
 
 @section('doctorSearch')
+<title>Search</title>
 <div class="row">
     <div class="col">
 
@@ -31,21 +32,25 @@
 
 @section('catigories')    
 
-<div class="row">
+<div class="row ms-2 me-2">
 @foreach ($specialize as $spec)
-    <div class="col-sm-4 mb-3 bg-">
-      <div class="card">
+    <div class="col-sm-3 mb-2">
+      <div class="card p-0 bg-transparent border border-2 rounded-pill text-center">
         <div class="card-body">
-          <h5 class="card-title">{{$spec->specialize}}</h5>
+          <a class="link-dark" href="{{route('doctorSearches', $spec->specialize)}}"><h5 class="card-title">{{$spec->specialize}}</h5></a>
           {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
         </div>
       </div>
-    </div>
+    </div> 
 @endforeach
+
+    {{-- {{$specialize}} --}}
   </div>
 @endsection
+
+
 @section('footer')
-<div class="copyright py-4 text-center text-white">
+<div class="footer copyright py-4 text-center text-white">
     <div class="container"><small>Copyright &copy; {{Request::server ("HTTP_HOST")}} 2022</small></div>
 </div>
 @endsection

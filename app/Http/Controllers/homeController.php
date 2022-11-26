@@ -15,7 +15,7 @@ class homeController extends Controller
         //         # code...
         //     }
         // }
-        return(view('home', compact('specialize')));
+        return(view('index', compact('specialize')));
     }
 
     public function getItemByName(Request $request){

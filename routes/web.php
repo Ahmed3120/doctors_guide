@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Doctors\DoctorsController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\view1Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +32,11 @@ Route::controller(homeController::class)->group(function(){
     Route::get('/doctorSearches/{specialize}', 'getDoctorBySpecialize')->name('doctorSearches');
 });
 
+Route::controller(DoctorsController::class)->group(function(){
+    Route::get('/dashboard', 'index');
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

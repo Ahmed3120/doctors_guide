@@ -1,8 +1,26 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
+
+html {
+  height: -webkit-fill-available;
+}
+
+main {
+  height: 100vh;
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+
+.scrollarea {
+  overflow-y: auto;
+}
+
 
 nav#mainNavBar{
     background-color: #5CB8E4;
@@ -102,5 +120,10 @@ header.masthead{
     background-color: #fff;
   }
   .divider-custom.divider-light .divider-custom-icon {
-    color: #fff;
+    color: rgb(218, 109, 109);
+  }
+
+  .link-hover:hover{
+    background-color: #5CB8E4;
+    color: white;
   }

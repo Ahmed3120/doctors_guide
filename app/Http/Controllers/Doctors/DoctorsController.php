@@ -12,6 +12,11 @@ class DoctorsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('dashboard.dashboard');
@@ -24,7 +29,7 @@ class DoctorsController extends Controller
      */
     public function create()
     {
-        //
+        return view('doctors.addDoctor');
     }
 
     /**

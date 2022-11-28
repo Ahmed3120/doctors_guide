@@ -34,9 +34,11 @@ Route::controller(homeController::class)->group(function(){
 
 Route::controller(DoctorsController::class)->group(function(){
     Route::get('/dashboard', 'index');
+    Route::get('/adddoctors', 'create');
 });
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

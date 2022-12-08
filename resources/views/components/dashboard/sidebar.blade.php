@@ -41,14 +41,15 @@
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item pb-3 ">
             <a href="#" class="nav-link active" aria-current="page">
-              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+              {{-- <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg> --}}
+              <i class="fa fa-home"></i>
               Home
             </a>
           </li>
           <li class="nav-item mb-3 link-hover">
-            <a href="#" class="nav-link link-dark">
-            <i class="fas fa-user-md"></i>
-              Doctors
+            <a href="{{route('addingdoctor')}}" class="nav-link link-dark">
+            <i class="fa fa-user-md" style="font-size:20px"></i>
+              Add Doctors
             </a>
           </li>
           <li class="mb-3 link-hover">

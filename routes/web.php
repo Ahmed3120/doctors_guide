@@ -34,7 +34,7 @@ Route::controller(homeController::class)->group(function(){
 
 Route::controller(DoctorsController::class)->group(function(){
     Route::get('/dashboard', 'index');
-    Route::get('/adddoctors', 'create');
+    Route::get('dashboard/adddoctors', 'create')->name('addingdoctor');
 });
 
 

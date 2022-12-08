@@ -2,7 +2,8 @@
 
 @section('addDoctor')
 
-<form class="row g-3">
+<form class="row g-3" method="POST" action="#" a>
+    @csrf
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">اسم الطيب او المركز</label>
       <input type="text" class="form-control" id="inputEmail4">

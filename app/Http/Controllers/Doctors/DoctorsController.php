@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Doctors;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Doctor;
 
 class DoctorsController extends Controller
 {
@@ -19,7 +20,14 @@ class DoctorsController extends Controller
 
     public function index()
     {
-        return view('dashboard.dashboard');
+        return view('doctors.addDoctor');
+    }
+
+    public function showDoctors(){
+        $all_doc = Doctor::all();
+
+
+        return view('doctors.showDoctors', compact('all_doc'));
     }
 
     /**
@@ -29,7 +37,7 @@ class DoctorsController extends Controller
      */
     public function create()
     {
-        return view('doctors.addDoctor');
+        // return view('doctors.addDoctor');
     }
 
     /**
@@ -40,7 +48,20 @@ class DoctorsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        // $fileName = $this -> saveImage($request->photo, 'images/offerimages');
+
+        //else save the input to data base 
+        Doctor::create([
+            'doctor_name' => $request->Docname,
+            'doctor_address1' => $request->address1,
+            'doctor_address2' => $request->address2,
+            'specialize' => $request->specialize,
+            'doctor_phone_number' => $request->phone_number,
+            'note' => $request->note,
+        ]);
+
+        // return redirect(route('addDoctor'))->with('success', __('read.Offer Added'));
     }
 
     /**
@@ -85,6 +106,13 @@ class DoctorsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tempDoc = Doctor::find($id);
+
+        if ($tempDoc) {
+            $tempDoc->delete();
+            return redirect()->back()->with('success', 'success');
+        }
+
+        return redirect()->back()->with('notfound', 'notfound');
     }
 }

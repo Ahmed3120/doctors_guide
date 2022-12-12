@@ -17,14 +17,26 @@ class Resservations extends Model
         'p_email',
         'p_case',
         'request_case',
+        'reservation_time'
         
     ];
 
     protected $hidden = [
-
+        'pivot'
     ];
 
     protected $cast = [
         
     ];
+
+    public function doctors(){
+        return $this->belongsToMany(
+            Doctor::class,
+            'doctors_resservations',
+            'doctor_id',
+            'resservation_id',
+            'id',
+            'id'
+        );
+    }
 }

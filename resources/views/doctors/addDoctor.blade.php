@@ -1,48 +1,89 @@
-@extends('dashboard.dashboard')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('addDoctor')
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
+    <meta name="author" content="potenzaglobalsolutions.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    @include('layouts.head')
+</head>
 
-<form class="row g-3" method="POST" action="#" a>
-    @csrf
-    <div class="col-md-6">
-      <label for="inputEmail4" class="form-label">اسم الطيب او المركز</label>
-      <input type="text" class="form-control" id="inputEmail4">
-    </div>
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">العنوان الاول</label>
-      <input type="password" class="form-control" id="inputPassword4">
-    </div>
-    <div class="col-12">
-      <label for="inputAddress" class="form-label">العنوان الاول</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="col-12">
-      <label for="inputAddress2" class="form-label">العنوان الثاني</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="col-md-6">
-      <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="col-md-4">
-      <label for="inputState" class="form-label">التخصص</label>
-      <select id="inputState" class="form-select">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    
-    <div class="col-12">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
-    </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
-  </form>
+<body>
 
-@endsection
+    <div class="wrapper">
+
+        <!--=================================
+ preloader -->
+
+        <div id="pre-loader">
+            <img src="{{asset('assets/images/pre-loader/loader-01.svg')}}" alt="">
+        </div>
+
+        <!--=================================
+ preloader -->
+
+        @include('layouts.main-header')
+
+        @include('layouts.main-sidebar')
+
+        <!--=================================
+ Main content -->
+        <!-- main-content -->
+        <div class="content-wrapper">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h4 class="mb-0">Add Doctor</h4>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-main mb-30">
+              <div class="row">
+                  <div class="col-lg-3 ">
+                     <form action="{{route('insertDoctor')}}" method="post" class="form">
+                        @csrf
+                        <label for="Docname">اسم الطبيب او المركز</label>
+                        <input class="form-control mb-2" type="text" name="Docname" id="Docname" placeholder="اسم الطبيب">
+
+                        <label for="spcial">الاختصاص</label>
+                        <input class="form-control mb-2" type="text" name="specialize" id="spcial" placeholder="الاختصاص">
+
+                        <label for="phone_number">رقم الهاتف</label>
+                        <input class="form-control mb-2" type="tel" name="phone_number" id="phone_number" placeholder="رقم الهاتف">
+
+                        <label for="address1">العنوان 1</label>
+                        <input class="form-control mb-2" type="text" name="address1" id="address1" placeholder="العنوان 1">
+
+                        <label for="address2">العنوان 2</label>
+                        <input class="form-control mb-2" type="text" name="address2" id="address2" placeholder="العنوان 2">
+
+
+                        <label for="note">ملاحظات</label>
+                        <input class="form-control mb-2" type="text" name="note" id="note" placeholder="ملاحظات">
+                     
+                        <input type="submit" value="اضف" class="btn btn-success">
+                    </form>
+                  </div>
+              </div>
+          </div> 
+            @include('layouts.footer')
+        </div><!-- main content wrapper end-->
+    </div>
+    </div>
+    </div>
+
+    <!--=================================
+ footer -->
+
+    @include('layouts.footer-scripts')
+
+</body>
+
+</html>

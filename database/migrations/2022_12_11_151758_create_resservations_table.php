@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('resservations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('doctor_id');// doctor 
             $table->string('pationt_name', 255);
             $table->string('p_number', 30); //pationt number
             $table->string('p_email', 255)->nullable(true);//pationt email

@@ -33,7 +33,7 @@ Route::controller(homeController::class)->group(function(){
 });
 
 Route::controller(DoctorsController::class)->group(function(){
-    Route::get('/dashboard', 'index');
+    // Route::get('/dashboard', 'index');
     Route::get('dashboard/adddoctors', 'create')->name('addingdoctor');
 });
 
@@ -41,4 +41,9 @@ Route::controller(DoctorsController::class)->group(function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::get('/doct1', [App\Http\Controllers\testcontroller::class, 'doctors']);
+
 

@@ -12,8 +12,8 @@ class Doctor extends Model
     protected $fillable = [
 
         'doctor_name',
-        'doctor_addresss1',
-        'doctor_addresss2',
+        'doctor_address1',
+        'doctor_address2',
         'specialize',
         'doctor_phone_number',
         'note',
@@ -22,6 +22,19 @@ class Doctor extends Model
     ];
 
     protected $hidden = [
-        'created_at'
+        'created_at',
+        'pivot'
     ];
+
+    public function resservations(){
+        return $this->belongsToMany(
+            'App\Models\Resservations',
+            'doctors_resservations',
+            'resservation_id',
+            'doctor_id',
+            'id',
+            'id'
+
+        );
+    }
 }

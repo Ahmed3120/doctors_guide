@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Doctor;
+use App\Models\Resservations;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -51,6 +52,15 @@ class DatabaseSeeder extends Seeder
             'specialize' => 'الباطنية والصدرية والقلبية',
             'doctor_phone_number' => '7702710980',
             'note' => 'يداوم في مستشفى البصرة (الجمهوري)التعليمي',
+        ]);
+
+        Resservations::factory()->create([
+            'pationt_name' => 'ahmed',
+            'p_number' => '0777193772',
+            'p_email' => 'ahmed@ahmed.com',
+            'p_case' => 'stomach hurat',
+            'request_case',
+            'reservation_time' => now()
         ]);
     }
 }

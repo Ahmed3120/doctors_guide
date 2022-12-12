@@ -88,6 +88,7 @@
         <main >
             
           @yield('dashboard')
+          @yield('addDoctors')
           @yield('content')
 
         </main>

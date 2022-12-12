@@ -35,9 +35,9 @@
 <div class="row ms-2 me-2">
 @foreach ($specialize as $spec)
     <div class="col-sm-3 mb-2">
-      <div class="card p-0 bg-transparent border border-2 rounded-pill text-center">
-        <div class="card-body">
-          <a class="link-dark" href="{{route('doctorSearches', $spec->specialize)}}"><h5 class="card-title">{{$spec->specialize}}</h5></a>
+      <div class="card p-0 bg-transparent border border-2 text-center ">
+        <div class="card-body catigory-card-hover catigory-card">
+          <a class="link-dark text-decoration-none" href="{{route('doctorSearches', $spec->specialize)}}"><h5 class="card-title">{{$spec->specialize}}</h5></a>
           {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
         </div>
       </div>
@@ -46,6 +46,8 @@
 
     {{-- {{$specialize}} --}}
   </div>
+
+ 
 @endsection
 
 

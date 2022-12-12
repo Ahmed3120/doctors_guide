@@ -123,7 +123,13 @@ header.masthead{
     color: rgb(218, 109, 109);
   }
 
-  .link-hover:hover{
+  .catigory-card-hover:hover{
     background-color: #5CB8E4;
     color: white;
   }
+
+  .catigory-card-hover{
+    
+    height: max-content;
+  }
+  

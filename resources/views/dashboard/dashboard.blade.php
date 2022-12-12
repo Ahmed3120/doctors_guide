@@ -22,13 +22,9 @@
   </head>
   <body>
 
-    <x-dashboard.sidebar />
-    @yield('addDoctor')
+@section('dashboard')
     
+  <x-dashboard.sidebar />
+  @yield('addDoctor')
 
-     {{-- cdn's for javaScript lib --}}
-     
-  </body>
-</html>
-  
-
+@endsection

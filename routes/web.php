@@ -45,5 +45,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/doct1', [App\Http\Controllers\testcontroller::class, 'doctors']);
+Route::get('/doct2', [App\Http\Controllers\testcontroller::class, 'doc']);
+Route::get('/doct3', [App\Http\Controllers\testcontroller::class, 'doc3']);
+
+
 
 

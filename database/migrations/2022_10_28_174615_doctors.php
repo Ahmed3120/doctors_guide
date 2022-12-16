@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id()->autoIncrement();
+            $table->integer('user_id')->nullable(true);
             $table->string('doctor_name', 255);
             $table->string('doctor_address1', 255);
             $table->string('doctor_address2', 500);

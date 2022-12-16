@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Doctor extends Model
 {
@@ -17,13 +18,13 @@ class Doctor extends Model
         'specialize',
         'doctor_phone_number',
         'note',
-        'updated_at'
+        'updated_at',
+        'user_id'
 
     ];
 
     protected $hidden = [
         'created_at',
-        'pivot'
     ];
 
     public function resservations(){
@@ -35,6 +36,13 @@ class Doctor extends Model
             'id',
             'id'
 
+        );
+    }
+
+    public function user(){
+        return $this->belongsTo(
+            'App\Models\User',
+            'id'
         );
     }
 }

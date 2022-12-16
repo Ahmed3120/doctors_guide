@@ -46,7 +46,7 @@
             </div>
             <div class="calendar-main mb-30">
               <div class="row">
-                  <div class="col ">
+                  <div class="col">
                     
                     @if (Session::has('success'))
                       <div class="alert alert-success" role="alert"><p>تم الحذف بنجاح</p></div>                        

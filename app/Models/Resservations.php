@@ -12,12 +12,16 @@ class Resservations extends Model
 
     protected $fillable = [
         'id',
+        'user_id',
         'pationt_name',
         'p_number',
         'p_email',
         'p_case',
         'request_case',
-        'reservation_time'
+        'reservation_time',
+        'treatment',
+        'checkups',
+        'next_reservation_time'
         
     ];
 

@@ -32,21 +32,22 @@ Route::controller(homeController::class)->group(function(){
     Route::get('/doctorSearches/{specialize}', 'getDoctorBySpecialize')->name('doctorSearches');
 });
 
-Route::controller(DoctorsController::class)->group(function(){
-    // Route::get('/dashboard', 'index');
+Route::controller(DoctorsController::class)->group(function(){;
     Route::get('dashboard/adddoctors', 'create')->name('addingdoctor');
 });
 
 
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\Doctors\DoctorPanelController::class, 'index'])->name('home');
 
 
 
 Route::get('/doct1', [App\Http\Controllers\testcontroller::class, 'doctors']);
 Route::get('/doct2', [App\Http\Controllers\testcontroller::class, 'doc']);
 Route::get('/doct3', [App\Http\Controllers\testcontroller::class, 'doc3']);
+
 
 
 

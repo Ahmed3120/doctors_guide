@@ -61,7 +61,7 @@ class DoctorsController extends Controller
             'note' => $request->note,
         ]);
 
-        // return redirect(route('addDoctor'))->with('success', __('read.Offer Added'));
+        return redirect()->back()->with('success', 'success');
     }
 
     /**

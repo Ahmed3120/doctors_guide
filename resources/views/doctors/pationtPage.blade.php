@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
-    <meta name="author" content="potenzaglobalsolutions.com" />
+    <meta name="keywords" content="Doctor guide basra" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     @include('layouts.head')
+    <title>{{config('app.name')}}</title>
 </head>
 
 <body>
@@ -60,13 +59,15 @@
                     <table class="table">
                         <thead class="thead-dark">
                           <tr>
-                            <th scope="col">#</th>
                             <th scope="col">اسم المريض</th>
                             <th scope="col">الايميل</th>
                             <th scope="col">رقم الهاتف</th>
                             <th scope="col">وصف الحالة</th>
                             <th scope="col">تاريخ الحجز</th>
-                            <th scope="col">زر</th>
+                            <th scope="col">العلاج المعطى</th>
+                            <th scope="col">التحليلات</th>
+                            <th scope="col">المراجعة القادمة</th>
+                            <th scope="col">تعديل</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -75,17 +76,15 @@
                                 
                             
                             <tr>
-                              <th scope="row">{{$pat->id}}</th>
                               <td>{{$pat->pationt_name}}</td>
                               <td>{{$pat->p_email}}</td>
                               <td>{{$pat->p_number}}</td>
                               <td>{{$pat->p_case}}</td>
                               <td>{{$pat->reservation_time}}</td>
-                              <td>
-                                <a class="btn btn-success" href="#"><i class="ti-plus"></i> قبول</a>
-
-                                <a class="btn btn-danger" href="#"><i class="ti-minus"></i> رفض </a>
-                              </td>
+                              <td>{{$pat->treatment}}</td>
+                              <td>{{$pat->checkups}}</td>
+                              <td>{{$pat->next_reservation_time}}</td>
+                              <td><a class="btn btn-primary" href="{{route('editpatient', $pat->id)}}">عرض وتعديل</a></td>
                             </tr>
                             @endif
                           @endforeach

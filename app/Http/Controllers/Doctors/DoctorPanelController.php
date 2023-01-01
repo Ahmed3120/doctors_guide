@@ -11,6 +11,11 @@ use Laravel\Ui\Presets\React;
 
 class DoctorPanelController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -81,6 +86,7 @@ class DoctorPanelController extends Controller
         if (!$doc) {
             return redirect()->back()->with('erorr', 'erorr');
         }
+
         $doc->update([
             'doctor_name' => $request->Docname,
             'doctor_address1' => $request->address1,

@@ -9,13 +9,10 @@ use Illuminate\Http\Request;
 class homeController extends Controller
 {
     function getHome(){
+        // return home page with specialize catigory
         $specialize = Doctor::select('specialize')->distinct()->get();
-        // foreach ($specialize as $special => $value) {
-        //     if ($special) {
-        //         # code...
-        //     }
-        // }
-        return(view('index', compact('specialize')));
+        return(view('layout.master', compact('specialize')));
+
     }
 
     public function getItemByName(Request $request){
@@ -42,12 +39,12 @@ class homeController extends Controller
 
     function getDoctorBySpecialize($specialize)
     {
+
         $doctorName = Doctor::where('specialize', $specialize)->get();
         if (!$doctorName) {
             return redirect()->back()->with('erorr', 'erorr');
         }
         return view('searchResult', compact('doctorName'));
-        // return redirect(view('doctorInfoPage'))->with('doctor', compact('doctor'));
     }
 
     function autoComplete(Request $request){

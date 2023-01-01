@@ -45,28 +45,31 @@
                 </div>
             </div>
             <div class="calendar-main mb-30">
+                @if (Session::has('success'))
+                    <div class="alert alert-success" role="alert"><p>تم اضافة طبيب جديد</p></div>
+                @endif
               <div class="row">
                   <div class="col-lg-3 ">
                      <form action="{{route('insertDoctor')}}" method="post" class="form">
                         @csrf
                         <label for="Docname">اسم الطبيب او المركز</label>
-                        <input class="form-control mb-2" type="text" name="Docname" id="Docname" placeholder="اسم الطبيب">
+                        <input class="form-control mb-2" type="text" name="Docname" id="Docname" placeholder="اسم الطبيب" required>
 
                         <label for="spcial">الاختصاص</label>
-                        <input class="form-control mb-2" type="text" name="specialize" id="spcial" placeholder="الاختصاص">
+                        <input class="form-control mb-2" type="text" name="specialize" id="spcial" placeholder="الاختصاص" required>
 
                         <label for="phone_number">رقم الهاتف</label>
-                        <input class="form-control mb-2" type="tel" name="phone_number" id="phone_number" placeholder="رقم الهاتف">
+                        <input class="form-control mb-2" type="tel" name="phone_number" id="phone_number" placeholder="رقم الهاتف" required>
 
                         <label for="address1">العنوان 1</label>
-                        <input class="form-control mb-2" type="text" name="address1" id="address1" placeholder="العنوان 1">
+                        <input class="form-control mb-2" type="text" name="address1" id="address1" placeholder="العنوان 1" required>
 
                         <label for="address2">العنوان 2</label>
-                        <input class="form-control mb-2" type="text" name="address2" id="address2" placeholder="العنوان 2">
+                        <input class="form-control mb-2" type="text" name="address2" id="address2" placeholder="العنوان 2" required>
 
 
                         <label for="note">ملاحظات</label>
-                        <input class="form-control mb-2" type="text" name="note" id="note" placeholder="ملاحظات">
+                        <input class="form-control mb-2" type="text" name="note" id="note" placeholder="ملاحظات" required>
                      
                         <input type="submit" value="اضف" class="btn btn-success">
                     </form>

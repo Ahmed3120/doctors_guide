@@ -86,7 +86,7 @@
                                     document.getElementById('change-req-case').submit();">
                                 <i class="ti-plus"></i> قبول</a>
 
-                                <a class="btn btn-danger" href="#"><i class="ti-minus"></i> رفض </a>
+                                <a class="btn btn-danger" href="{{route('deleteRequest', $pat->id)}}"><i class="ti-minus"></i> رفض</a>
                               </td>
                             </tr>
                               <form id="change-req-case" action="{{route('caseupdate', $pat->id)}}" method="POST" style="display: none;">

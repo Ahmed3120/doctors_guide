@@ -23,16 +23,24 @@ main {
 
 
 nav#mainNavBar{
-    background-color: #5CB8E4;
+    background-color: #225ede;
+}
+
+nav#mainNavBar a{
     color: #ffffff;
 }
 
-nav#mainNavBar ul a{
-    color: #ffffff;
+footer#mainfooter {
+  background-color: #225ede;
+  color: white;  
+}
+
+footer#mainfooter a{
+  color: white;  
 }
 
 body{
-    background-color: #F2F2F2;
+    background-color: #fdfdfd;
 }
 
 div.container{
@@ -45,12 +53,15 @@ div.container div.row div.col div.card{
     background-color: transparent;
     padding: 5%;
     border: none;
+    box-shadow: 0 0 4px 0;
+    font-weight: normal;
+    
 
 }
 
 div.container input#floatingInput{
     background-color: transparent;
-    border: 2px solid black;
+    border-bottom: 1px solid black;
     padding: 2px;
 }
 
@@ -132,4 +143,21 @@ header.masthead{
     
     height: max-content;
   }
-  
+
+  .card-layout {
+    display: flex;
+
+    /* Put a card in the next row when previous cards take all width */
+    flex-wrap: wrap;
+
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+}
+
+.card-layout__item {
+    /* There will be 3 cards per row */
+    flex-basis: 33.33333%;
+
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
